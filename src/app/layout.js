@@ -20,9 +20,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full w-full overflow-x-hidden`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-1 overflow-hidden">{children}</main>
+        </div>
       </body>
     </html>
   );
