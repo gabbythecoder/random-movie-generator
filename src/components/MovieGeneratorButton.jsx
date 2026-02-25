@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import GenreDropdown from "./GenreDropdown";
 
 export default function MovieGeneratorButton({ movies, movieGenres }) {
   const [movie, setMovie] = useState(null);
+  const [selectedGenre, setSelectedGenre] = useState("");
 
   useEffect(() => {
     if (movies && movies.length > 0) {
@@ -12,16 +14,35 @@ export default function MovieGeneratorButton({ movies, movieGenres }) {
     }
   }, [movies]);
 
+  function getRandomMovie() {
+    // filter by genre if selected
+    const filteredMovies = selectedGenre
+      ? movies.filter((movie) =>
+          movie.genre_ids.includes(Number(selectedGenre)),
+        )
+      : movies;
+
+    if (filteredMovies.length === 0) {
+      return null;
+    }
+
+    return (
+      filteredMovies[Math.floor(Math.random() * filteredMovies.length)] || null
+    );
+  }
+
   if (!movie) {
     return <p>Loading movies...</p>;
   }
 
-  function getRandomMovie() {
-    return movies[Math.floor(Math.random() * movies.length)];
-  }
-
   return (
     <div className="flex flex-col items-center justify-center">
+      <GenreDropdown
+        genres={movieGenres}
+        selectedGenre={selectedGenre}
+        onChange={setSelectedGenre}
+      />
+
       <button
         className="cursor-pointer border p-1"
         onClick={() => setMovie(getRandomMovie())}

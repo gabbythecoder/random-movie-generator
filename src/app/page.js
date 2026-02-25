@@ -11,7 +11,7 @@ export default async function HomePage() {
       <section className="min-h-screen flex flex-col items-center justify-center">
         <h1>What movie to watch?</h1>
 
-        <MovieGeneratorButton movies={movies} />
+        <MovieGeneratorButton movies={movies} movieGenres={movieGenres} />
       </section>
     </div>
   );

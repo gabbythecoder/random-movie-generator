@@ -10,5 +10,5 @@ export async function fetchMovieGenres() {
 
   const data = await response.json();
     // console.log(data);
-  return data.results;
+  return data.genres;
 }
