@@ -44,7 +44,7 @@ export default function MovieGeneratorButton({ movies, movieGenres }) {
       />
 
       <button
-        className="cursor-pointer border p-1"
+        className="cursor-pointer border-2 m-1.5 p-2 rounded-[50px] hover:bg-[var(--hover-colour)] hover:border-[var(--hover-colour)] hover:text-black transition-colors duration-450"
         onClick={() => setMovie(getRandomMovie())}
       >
         Generate another movie

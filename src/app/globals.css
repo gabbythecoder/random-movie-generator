@@ -3,10 +3,18 @@
 :root {
   --background: #0c0c0c;
   --foreground: #ffffff;
+  --title-colour: #ffd700;
+  --hover-colour: #ffc300;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.title-font {
+  font-family: var(--font-luckiestguy);
+  letter-spacing: 0.15rem;
+  color: var(--title-colour);
 }

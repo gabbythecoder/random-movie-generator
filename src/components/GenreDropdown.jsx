@@ -7,12 +7,12 @@ export default function GenreDropdown({
 }) {
   return (
     <div>
-      <label>Filter by genres:</label>
+      <label>Filter by genre:</label>
       <select
         value={selectedGenre}
         onChange={(event) => onChange(event.target.value)}
       >
-        <option value="">All Genres</option>
+        <option value="" className="text-center">All Genres</option>
         {genres.map((genre) => (
           <option key={genre.id} value={genre.id}>
             {genre.name}

@@ -9,7 +9,7 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col w-full">
       <section className="min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-3xl m-1 p-4">What movie to watch?</h1>
+        <h1 className="text-3xl m-1 p-4 title-font">What movie to watch?</h1>
 
         <MovieGeneratorButton movies={movies} movieGenres={movieGenres} />
       </section>
