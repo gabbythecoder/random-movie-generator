@@ -37,19 +37,21 @@ export default function MovieGeneratorButton({ movies, movieGenres }) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <GenreDropdown
-        genres={movieGenres}
-        selectedGenre={selectedGenre}
-        onChange={setSelectedGenre}
-      />
+      <div className="flex items-center gap-2">
+        <GenreDropdown
+          genres={movieGenres}
+          selectedGenre={selectedGenre}
+          onChange={setSelectedGenre}
+        />
 
-      <button
-        className="cursor-pointer border-2 m-1.5 p-2 rounded-[50px] hover:bg-[var(--hover-colour)] hover:border-[var(--hover-colour)] hover:text-black transition-colors duration-450"
-        onClick={() => setMovie(getRandomMovie())}
-      >
-        Generate another movie
-      </button>
-      <h2>{movie.title}</h2>
+        <button
+          className="cursor-pointer border-2 m-1.5 p-2 rounded-[50px] hover:bg-[var(--hover-colour)] hover:border-[var(--hover-colour)] hover:text-black transition-colors duration-450"
+          onClick={() => setMovie(getRandomMovie())}
+        >
+          Generate another movie
+        </button>
+      </div>
+      <h2 className="text-2xl mt-2 mb-1.5 font-bold">{movie.title}</h2>
 
       {movie.poster_path && (
         <Image
